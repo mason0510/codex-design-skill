@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deck Starter</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050816;
+      color: white;
+      font-family: "PingFang SC", "Helvetica Neue", sans-serif;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .stage {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.20), transparent 28%), #050816;
+    }
+    .deck {
+      width: min(100vw, calc(100vh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      background: #0f172a;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    section {
+      position: absolute;
+      inset: 0;
+      padding: 80px;
+      display: none;
+    }
+    section.active { display: block; }
+    .eyebrow {
+      color: #38bdf8;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 72px;
+      line-height: 1.04;
+      margin: 20px 0;
+      max-width: 1040px;
+    }
+    p {
+      font-size: 28px;
+      line-height: 1.7;
+      max-width: 980px;
+      color: rgba(255, 255, 255, 0.76);
+    }
+    .footer {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .controls {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="deck">
+      <section class="active" data-screen-label="01 Title">
+        <div class="eyebrow">Slide 01</div>
+        <h1>把这里换成你的标题页</h1>
+        <p>这是一个最小可运行的 HTML 幻灯片起步文件。适合快速进入 16:9 演示稿结构，再替换成真实内容与视觉系统。</p>
+      </section>
+      <section data-screen-label="02 Agenda">
+        <div class="eyebrow">Slide 02</div>
+        <h1>把这里换成第二页内容</h1>
+        <p>默认支持键盘左右切换，并会记住当前页。真正交付时，请重写版式、节奏和信息层级。</p>
+      </section>
+      <div class="footer" id="counter"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <button id="prev">上一页</button>
+    <button id="next">下一页</button>
+  </div>
+  <script>
+    const key = 'codex-design-skill:deck-starter:index';
+    const slides = [...document.querySelectorAll('section')];
+    const counter = document.getElementById('counter');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let index = Math.max(0, Math.min(slides.length - 1, Number(localStorage.getItem(key) || 0)));
+
+    const render = () => {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      counter.textContent = `${index + 1} / ${slides.length}`;
+      localStorage.setItem(key, String(index));
+    };
+
+    const move = (delta) => {
+      index = Math.max(0, Math.min(slides.length - 1, index + delta));
+      render();
+    };
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') move(1);
+      if (event.key === 'ArrowLeft') move(-1);
+    });
+
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    render();
+  </script>
+</body>
+</html>
