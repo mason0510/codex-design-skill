@@ -179,25 +179,6 @@ If you want to contribute:
 
 If you discover a security issue, do not open a public issue first. Follow the process in [SECURITY.md](./SECURITY.md).
 
-## Non-goals
-
-This repository does **not** try to:
-
-- recreate a closed-source design environment
-- copy proprietary wording or internal prompts
-- become a script-heavy toolbox
-- replace design thinking with template spam
-
-## Open-source boundary
-
-This project is an **extracted design skill**, not a verbatim copy of a third-party closed prompt.
-
-Boundary rules:
-- keep the reusable methodology
-- do not copy proprietary phrasing
-- do not bundle private brand environments
-- do not expose internal closed-product implementation details
-
 ## 📈 Star history
 
 [![Star History Chart](https://api.star-history.com/svg?repos=mason0510/codex-design-skill&type=Date)](https://star-history.com/#mason0510/codex-design-skill&Date)

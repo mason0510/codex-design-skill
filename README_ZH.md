@@ -176,25 +176,6 @@ bash ./scripts/validate.sh
 
 如果你发现潜在安全问题，不要公开提 Issue，直接看 [SECURITY.md](./SECURITY.md) 的披露流程。
 
-## 🚧 非目标
-
-这个仓库**不追求**：
-
-- 复刻某个闭源设计环境的全部机制
-- 搬运专有品牌术语或私有 prompt
-- 变成脚本堆砌的大杂烩
-- 用大量模板替代设计判断
-
-## 🤝 开源边界
-
-本项目是 **提炼版设计 skill**，不是第三方系统提示词的逐字复制品。
-
-明确边界：
-- 保留可复用的方法论
-- 不照搬专有表述
-- 不捆绑私有品牌环境
-- 不输出闭源产品内部实现细节
-
 ## ⭐ Star 增长趋势图
 
 [![Star History Chart](https://api.star-history.com/svg?repos=mason0510/codex-design-skill&type=Date)](https://star-history.com/#mason0510/codex-design-skill&Date)
