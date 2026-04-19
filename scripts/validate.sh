@@ -14,6 +14,8 @@ required_files=(
   CONTRIBUTING.md
   CHANGELOG.md
   TODOS.md
+  CODE_OF_CONDUCT.md
+  SECURITY.md
   .gitignore
   LICENSE
   agents/codex.md
@@ -26,6 +28,10 @@ required_files=(
   templates/deck-starter.html
   examples/usage.md
   .github/workflows/ci.yml
+  .github/ISSUE_TEMPLATE/bug_report.yml
+  .github/ISSUE_TEMPLATE/feature_request.yml
+  .github/ISSUE_TEMPLATE/config.yml
+  .github/PULL_REQUEST_TEMPLATE.md
 )
 
 for file in "${required_files[@]}"; do
@@ -73,4 +79,5 @@ for pattern in "${patterns[@]}"; do
   fi
 done
 
+echo "社区治理文件校验通过"
 echo "validate.sh: OK"

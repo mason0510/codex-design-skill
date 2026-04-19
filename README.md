@@ -8,6 +8,7 @@
 ![Type](https://img.shields.io/badge/type-skill--first-blue.svg)
 ![Focus](https://img.shields.io/badge/focus-design%20delivery-purple.svg)
 ![Workflow](https://img.shields.io/badge/workflow-context--first-orange.svg)
+![CI](https://img.shields.io/github/actions/workflow/status/mason0510/codex-design-skill/ci.yml?branch=main&label=ci)
 
 ## ✨ 这是什么
 
@@ -71,6 +72,8 @@ codex-design-skill/
 ├── CONTRIBUTING.md                   # 贡献指南
 ├── CHANGELOG.md                      # 版本记录
 ├── TODOS.md                          # 后续规划
+├── CODE_OF_CONDUCT.md                # 社区行为准则
+├── SECURITY.md                       # 安全披露说明
 ├── agents/
 │   └── codex.md                      # Codex 侧接入说明
 ├── references/
@@ -86,7 +89,10 @@ codex-design-skill/
 │   └── usage.md                      # 触发示例
 ├── scripts/
 │   └── validate.sh                   # 结构 + 敏感词校验
-└── .github/workflows/ci.yml          # CI
+└── .github/
+    ├── workflows/ci.yml              # CI
+    ├── ISSUE_TEMPLATE/               # Issue 模板
+    └── PULL_REQUEST_TEMPLATE.md      # PR 模板
 ```
 
 ## ⚡ 快速开始
@@ -121,6 +127,12 @@ SKILL.md
 bash ./scripts/validate.sh
 ```
 
+### 4. 从最小示例开始
+
+- 想做原型：先读 `templates/prototype-starter.html`
+- 想做 HTML deck：先读 `templates/deck-starter.html`
+- 想知道如何触发：看 `examples/usage.md`
+
 ## 🛠️ 这份仓库包含什么
 
 ### 1. 一个精简主 skill
@@ -140,15 +152,29 @@ bash ./scripts/validate.sh
 - 必要文件是否存在
 - `SKILL.md` frontmatter 是否合规
 - 是否含明显敏感路径 / 邮箱 / 专有提示词残留
+- 社区治理文件和 GitHub 模板是否齐全
 
-## 📚 参考文档
+## 📚 详细文档
 
 - [架构说明](./ARCHITECTURE.md)
 - [使用与维护](./USAGE_AND_MAINTENANCE.md)
 - [示例](./examples/usage.md)
 - [贡献指南](./CONTRIBUTING.md)
+- [行为准则](./CODE_OF_CONDUCT.md)
+- [安全披露](./SECURITY.md)
 - [变更记录](./CHANGELOG.md)
 - [待办事项](./TODOS.md)
+
+## 🤝 社区协作方式
+
+如果你准备贡献：
+
+1. 先读 [CONTRIBUTING.md](./CONTRIBUTING.md)
+2. 通过 Issue 模板提交 bug / feature request
+3. 新增规则时优先判断放 `SKILL.md`、`references/` 还是 `templates/`
+4. 提交前运行 `bash ./scripts/validate.sh`
+
+如果你发现潜在安全问题，不要公开提 Issue，直接看 [SECURITY.md](./SECURITY.md) 的披露流程。
 
 ## 🚧 非目标
 
@@ -190,6 +216,12 @@ bash ./scripts/validate.sh
 ### 5. 为什么要拆成 references 和 templates？
 因为主 `SKILL.md` 应该保持精简；细规则放 `references/`，起步文件放 `templates/`，这样仓库更稳。
 
+### 6. 这份仓库最适合谁？
+最适合已经在 Codex / Claude Code / OpenCode 里做页面原型、幻灯片、设计探索，但不想继续输出“AI 套板网页”的人。
+
+### 7. 它会替我做完整设计系统吗？
+不会。它负责把设计任务拉回正确流程，不替代成熟设计系统和真实品牌资产。
+
 ## 📄 License
 
-MIT
+MIT。详见 [LICENSE](./LICENSE)。

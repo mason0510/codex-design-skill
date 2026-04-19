@@ -7,11 +7,13 @@ A **skill-first open-source repository** for turning Codex into a design deliver
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Type](https://img.shields.io/badge/type-skill--first-blue.svg)
 ![Focus](https://img.shields.io/badge/focus-design%20delivery-purple.svg)
+![Workflow](https://img.shields.io/badge/workflow-context--first-orange.svg)
+![CI](https://img.shields.io/github/actions/workflow/status/mason0510/codex-design-skill/ci.yml?branch=main&label=ci)
 
 ## What this repository is
 
 `codex-design-skill` is not a dump of a proprietary closed prompt.
-It is a neutral, reusable design workflow for Codex-style environments.
+It is an extracted, reusable workflow for Codex-style environments that need better design delivery.
 
 It focuses on three things:
 
@@ -35,6 +37,18 @@ This repository is built to reduce the common failure modes of AI design work:
 - turning every request into the same web page pattern
 - delivering only one direction with no comparison space
 - handing off broken HTML without validation
+
+## Problems it tries to solve
+
+Many coding assistants still behave like this on design tasks:
+
+- they start drawing immediately
+- they ignore existing product context
+- they force every deliverable into a normal web page shape
+- they provide only one answer with no tweak surface
+- they stop at code generation instead of delivery validation
+
+`codex-design-skill` is designed to push against those patterns.
 
 ## Use cases
 
@@ -60,6 +74,8 @@ codex-design-skill/
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md
 ├── TODOS.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
 ├── agents/
 │   └── codex.md
 ├── references/
@@ -75,22 +91,50 @@ codex-design-skill/
 │   └── usage.md
 ├── scripts/
 │   └── validate.sh
-└── .github/workflows/ci.yml
+└── .github/
+    ├── workflows/ci.yml
+    ├── ISSUE_TEMPLATE/
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
 ## Quick start
 
+### 1. Clone the repository
+
 ```bash
 git clone https://github.com/mason0510/codex-design-skill.git
 cd codex-design-skill
-bash ./scripts/validate.sh
 ```
 
-Main entry:
+### 2. Install it into your local skills directory
+
+#### Codex
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R . ~/.codex/skills/codex-design-skill
+```
+
+#### Other compatible environments
+
+Copy this repository into the appropriate skills directory.
+The main entry stays the same:
 
 ```text
 SKILL.md
 ```
+
+### 3. Run the minimum validation
+
+```bash
+bash ./scripts/validate.sh
+```
+
+### 4. Start from the smallest useful artifact
+
+- for prototypes: `templates/prototype-starter.html`
+- for HTML decks: `templates/deck-starter.html`
+- for trigger examples: `examples/usage.md`
 
 ## What is included
 
@@ -111,6 +155,29 @@ These are not meant to replace real design judgment. They are only fast starting
 - required files
 - `SKILL.md` frontmatter shape
 - obvious sensitive strings or proprietary leftovers
+- the presence of basic community governance files
+
+## Documentation
+
+- [Architecture](./ARCHITECTURE.md)
+- [Usage and Maintenance](./USAGE_AND_MAINTENANCE.md)
+- [Examples](./examples/usage.md)
+- [Contributing](./CONTRIBUTING.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Security Policy](./SECURITY.md)
+- [Changelog](./CHANGELOG.md)
+- [TODOs](./TODOS.md)
+
+## How collaboration works
+
+If you want to contribute:
+
+1. read [CONTRIBUTING.md](./CONTRIBUTING.md)
+2. use the issue templates for bugs and feature requests
+3. decide whether a change belongs in `SKILL.md`, `references/`, `templates/`, or `scripts/`
+4. run `bash ./scripts/validate.sh` before opening a PR
+
+If you discover a security issue, do not open a public issue first. Follow the process in [SECURITY.md](./SECURITY.md).
 
 ## Non-goals
 
@@ -120,6 +187,16 @@ This repository does **not** try to:
 - copy proprietary wording or internal prompts
 - become a script-heavy toolbox
 - replace design thinking with template spam
+
+## Open-source boundary
+
+This project is an **extracted design skill**, not a verbatim copy of a third-party closed prompt.
+
+Boundary rules:
+- keep the reusable methodology
+- do not copy proprietary phrasing
+- do not bundle private brand environments
+- do not expose internal closed-product implementation details
 
 ## 📈 Star history
 
@@ -142,6 +219,12 @@ No. It is an extracted open-source workflow, not a mirror of any closed environm
 ### 5. Why split the repo into `references/` and `templates/`?
 To keep `SKILL.md` compact while still keeping the repository practical and maintainable.
 
+### 6. Who is this repository best for?
+People using Codex, Claude Code, or similar agents for prototypes, HTML decks, and UI exploration who want better delivery discipline.
+
+### 7. Will it replace a full design system?
+No. It improves workflow quality, but it does not replace a real design system, a mature brand package, or production-grade assets.
+
 ## License
 
-MIT
+MIT. See [LICENSE](./LICENSE).

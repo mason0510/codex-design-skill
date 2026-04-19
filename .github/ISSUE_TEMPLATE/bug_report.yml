@@ -1,0 +1,36 @@
+name: Bug report
+description: 报告 skill、模板、文档或校验脚本的问题
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题描述
+      description: 发生了什么？尽量写清楚实际现象。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 使用环境
+      description: 例如 Codex / Claude Code / OpenCode / 本地 shell
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 请给出最小复现步骤
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 例如读取了哪些文件、涉及哪些模板、是否跑过 validate.sh

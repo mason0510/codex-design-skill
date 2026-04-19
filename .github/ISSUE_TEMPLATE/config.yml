@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security issue
+    url: https://github.com/mason0510/codex-design-skill/blob/main/SECURITY.md
+    about: 涉及敏感信息、专有残留或不应公开内容时，请先按 SECURITY.md 处理
