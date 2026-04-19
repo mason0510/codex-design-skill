@@ -7,6 +7,7 @@ cd "$ROOT"
 required_files=(
   SKILL.md
   README.md
+  README_ZH.md
   README_EN.md
   ARCHITECTURE.md
   USAGE_AND_MAINTENANCE.md

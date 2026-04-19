@@ -1,5 +1,7 @@
 # Codex Design Skill
 
+> Default Chinese homepage | [README_ZH.md](./README_ZH.md) | [README_EN.md](./README_EN.md)
+
 A **skill-first open-source repository** for turning Codex into a design delivery partner instead of a generic HTML page generator.
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -51,6 +53,7 @@ This repository is built to reduce the common failure modes of AI design work:
 codex-design-skill/
 ├── SKILL.md
 ├── README.md
+├── README_ZH.md
 ├── README_EN.md
 ├── ARCHITECTURE.md
 ├── USAGE_AND_MAINTENANCE.md
@@ -118,13 +121,26 @@ This repository does **not** try to:
 - become a script-heavy toolbox
 - replace design thinking with template spam
 
-## Docs
+## 📈 Star history
 
-- `SKILL.md`
-- `ARCHITECTURE.md`
-- `USAGE_AND_MAINTENANCE.md`
-- `examples/usage.md`
-- `references/*`
+[![Star History Chart](https://api.star-history.com/svg?repos=mason0510/codex-design-skill&type=Date)](https://star-history.com/#mason0510/codex-design-skill&Date)
+
+## ❓ Beginner FAQ
+
+### 1. Is this a CLI tool?
+No. It is primarily a **skill repository**. The main value is the workflow, design judgment, references, and starter files.
+
+### 2. Can I use it if I am not a designer?
+Yes. It helps turn vague design requests into a better delivery workflow instead of random page generation.
+
+### 3. Should I use it for tiny CSS fixes?
+No. For small frontend fixes, a normal coding workflow is enough.
+
+### 4. Is this a one-to-one replacement for a closed design prompt?
+No. It is an extracted open-source workflow, not a mirror of any closed environment.
+
+### 5. Why split the repo into `references/` and `templates/`?
+To keep `SKILL.md` compact while still keeping the repository practical and maintainable.
 
 ## License
 
